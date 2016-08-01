@@ -1,42 +1,24 @@
-# perf
+# ssr perf
 
-Welcome to the perf DoneJS application!
+This project is used for testing perf if done-ssr in order to find ways to improve rendering speed.
 
-## Getting started
+## Run
 
-To install all dependencies, (e.g. after cloning it from a Git repository) run
+First do a build:
 
-``
-npm install donejs -g
+```shell
 npm install
-```
-
-## Running tests
-
-Tests can be run with
-
-```
-donejs test
-``
-
-## Development mode
-
-Development mode can be started with
-
-```
-donejs develop
-```
-
-## Build and production mode
-
-To build the application into a production bundle run
-
-```
 donejs build
 ```
 
-In Unix environment the production application can be started like this:
+Then start the server:
 
+```shell
+NODE_ENV=production donejs start
 ```
-NODE_ENV=production npm start
+
+And in an other terminal do loading testing (this uses [siege](https://www.joedog.org/siege-home/):
+
+```shell
+siege -c50 -d10 -t3M http://localhost:8080/
 ```
