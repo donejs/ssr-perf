@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <can-import from="perf/styles.less!" />
+    <can-import from="perf/app" export-as="viewModel" />
+
+    <section class="logo">
+    <img src="http://blog.bitovi.com/wp-content/uploads/2015/10/donejs-logo-ie.png"/>
+    </section>
+
+    <header>
+      <h1>Cool App!</h1>
+      <h2>This is a really cool app.</h2>
+    </header>
+
+    {{#switch env.NODE_ENV}}
+      {{#case "production"}}
+        <script src="{{joinBase 'node_modules/steal/steal.production.js'}}"  main="perf/index.stache!done-autorender"></script>
+      {{/case}}
+      {{#default}}
+        <script src="/node_modules/steal/steal.js"></script>
+      {{/default}}
+    {{/switch}}
+  </body>
+</html>
