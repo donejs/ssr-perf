@@ -1,5 +1,7 @@
 # ssr perf
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/donejs/ssr-perf.svg)](https://greenkeeper.io/)
+
 This project is used for testing perf if done-ssr in order to find ways to improve rendering speed.
 
 ## Run
